@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  OutPlayer
+
+  Created by xl on 2017/12/6.
+  Copyright © 2017年 xl. All rights reserved.
+*/
+"hello" = "Hello";
+"cancel" = "Cancel";
+"Yesterday you sold %@ apps" = "Yesterday you sold %@ apps";

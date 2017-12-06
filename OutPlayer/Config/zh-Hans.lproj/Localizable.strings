@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  OutPlayer
+
+  Created by xl on 2017/12/6.
+  Copyright © 2017年 xl. All rights reserved.
+*/
+"hello" = "你好";
+"cancel" = "取消";
+"Yesterday you sold %@ apps" = "昨天销售 %@ 元";

@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *hello = NSLocalizedString(@"hello", nil);
+    NSString *number = @"10";
+    NSString *str = [NSString stringWithFormat:NSLocalizedString(@"Yesterday you sold %@ apps", nil), number];
+    NSLog(@"%@====%@",hello,str);
 }
 
 
