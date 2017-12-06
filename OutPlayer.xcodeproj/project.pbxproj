@@ -13,6 +13,10 @@
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
 		76A721021FD7902400FF9F99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721011FD7902400FF9F99 /* main.m */; };
+		76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7210D1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m */; };
+		76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721111FD7DDBC00FF9F99 /* BaseNavigationController.m */; };
+		76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7211C1FD7EDCC00FF9F99 /* HttpRequestManager.m */; };
+		76A721201FD7EE4900FF9F99 /* TestLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7211F1FD7EE4900FF9F99 /* TestLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,16 @@
 		76A720FE1FD7902400FF9F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76A721001FD7902400FF9F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76A721011FD7902400FF9F99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76A7210D1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+RD_extension.m"; sourceTree = "<group>"; };
+		76A7210E1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+RD_extension.h"; sourceTree = "<group>"; };
+		76A721101FD7DDBC00FF9F99 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		76A721111FD7DDBC00FF9F99 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		76A721171FD7E07D00FF9F99 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		76A721191FD7E2D400FF9F99 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		76A7211B1FD7EDCC00FF9F99 /* HttpRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
+		76A7211C1FD7EDCC00FF9F99 /* HttpRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
+		76A7211E1FD7EE4900FF9F99 /* TestLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLib.h; sourceTree = "<group>"; };
+		76A7211F1FD7EE4900FF9F99 /* TestLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +58,7 @@
 			children = (
 				76A720F11FD7902400FF9F99 /* OutPlayer */,
 				76A720F01FD7902400FF9F99 /* Products */,
+				76A721161FD7DEFB00FF9F99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +73,106 @@
 		76A720F11FD7902400FF9F99 /* OutPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				76A720F21FD7902400FF9F99 /* AppDelegate.h */,
-				76A720F31FD7902400FF9F99 /* AppDelegate.m */,
-				76A720F51FD7902400FF9F99 /* ViewController.h */,
-				76A720F61FD7902400FF9F99 /* ViewController.m */,
-				76A720F81FD7902400FF9F99 /* Main.storyboard */,
-				76A720FB1FD7902400FF9F99 /* Assets.xcassets */,
-				76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */,
-				76A721001FD7902400FF9F99 /* Info.plist */,
-				76A721011FD7902400FF9F99 /* main.m */,
+				76A721091FD7DC8E00FF9F99 /* Config */,
+				76A721081FD7DC1800FF9F99 /* Launch */,
+				76A7210B1FD7DD5400FF9F99 /* BassClass */,
+				76A7210C1FD7DD6F00FF9F99 /* Categorys */,
+				76A721151FD7DEC700FF9F99 /* Libs */,
+				76A721131FD7DE3400FF9F99 /* Network */,
+				76A721181FD7E09100FF9F99 /* Storyboards */,
+				76A721141FD7DE6100FF9F99 /* Controllers */,
+				76A7211A1FD7E6A600FF9F99 /* Supporting Files */,
 			);
 			path = OutPlayer;
+			sourceTree = "<group>";
+		};
+		76A721081FD7DC1800FF9F99 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */,
+				76A721011FD7902400FF9F99 /* main.m */,
+				76A720F21FD7902400FF9F99 /* AppDelegate.h */,
+				76A720F31FD7902400FF9F99 /* AppDelegate.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		76A721091FD7DC8E00FF9F99 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				76A721001FD7902400FF9F99 /* Info.plist */,
+				76A721191FD7E2D400FF9F99 /* PrefixHeader.pch */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		76A7210B1FD7DD5400FF9F99 /* BassClass */ = {
+			isa = PBXGroup;
+			children = (
+				76A721101FD7DDBC00FF9F99 /* BaseNavigationController.h */,
+				76A721111FD7DDBC00FF9F99 /* BaseNavigationController.m */,
+			);
+			path = BassClass;
+			sourceTree = "<group>";
+		};
+		76A7210C1FD7DD6F00FF9F99 /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				76A7210E1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.h */,
+				76A7210D1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		76A721131FD7DE3400FF9F99 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76A7211B1FD7EDCC00FF9F99 /* HttpRequestManager.h */,
+				76A7211C1FD7EDCC00FF9F99 /* HttpRequestManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		76A721141FD7DE6100FF9F99 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76A720F51FD7902400FF9F99 /* ViewController.h */,
+				76A720F61FD7902400FF9F99 /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		76A721151FD7DEC700FF9F99 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				76A7211E1FD7EE4900FF9F99 /* TestLib.h */,
+				76A7211F1FD7EE4900FF9F99 /* TestLib.m */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		76A721161FD7DEFB00FF9F99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76A721171FD7E07D00FF9F99 /* MediaPlayer.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		76A721181FD7E09100FF9F99 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				76A720F81FD7902400FF9F99 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		76A7211A1FD7E6A600FF9F99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76A720FB1FD7902400FF9F99 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A721201FD7EE4900FF9F99 /* TestLib.m in Sources */,
+				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
 				76A720F71FD7902400FF9F99 /* ViewController.m in Sources */,
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
 				76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */,
+				76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */,
+				76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +387,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = OutPlayer/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Outsourcing.OutPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,11 +402,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = OutPlayer/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Outsourcing.OutPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
