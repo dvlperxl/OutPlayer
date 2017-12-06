@@ -9,7 +9,6 @@
 #ifndef BaseHeader_h
 #define BaseHeader_h
 
-
 // 字符串是否为空
 #define STR_IS_NIL(string) [string isEmpty]
 

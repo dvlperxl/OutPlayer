@@ -27,6 +27,7 @@
 		76A721521FD80F6000FF9F99 /* NativeVideos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A721511FD80F6000FF9F99 /* NativeVideos.storyboard */; };
 		76A721541FD80F7600FF9F99 /* LeadVideos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A721531FD80F7600FF9F99 /* LeadVideos.storyboard */; };
 		76A721561FD80F8200FF9F99 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A721551FD80F8200FF9F99 /* Setting.storyboard */; };
+		76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721581FD813E600FF9F99 /* RDSandboxTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		76A721511FD80F6000FF9F99 /* NativeVideos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NativeVideos.storyboard; sourceTree = "<group>"; };
 		76A721531FD80F7600FF9F99 /* LeadVideos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeadVideos.storyboard; sourceTree = "<group>"; };
 		76A721551FD80F8200FF9F99 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		76A721581FD813E600FF9F99 /* RDSandboxTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSandboxTool.m; sourceTree = "<group>"; };
+		76A721591FD813E600FF9F99 /* RDSandboxTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSandboxTool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				76A721081FD7DC1800FF9F99 /* Launch */,
 				76A7210B1FD7DD5400FF9F99 /* BassClass */,
 				76A7210C1FD7DD6F00FF9F99 /* Categorys */,
+				76A721571FD813CA00FF9F99 /* SystemUtils */,
 				76A721151FD7DEC700FF9F99 /* Libs */,
 				76A721131FD7DE3400FF9F99 /* Network */,
 				76A721181FD7E09100FF9F99 /* Storyboards */,
@@ -325,6 +329,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		76A721571FD813CA00FF9F99 /* SystemUtils */ = {
+			isa = PBXGroup;
+			children = (
+				76A721591FD813E600FF9F99 /* RDSandboxTool.h */,
+				76A721581FD813E600FF9F99 /* RDSandboxTool.m */,
+			);
+			path = SystemUtils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +421,7 @@
 				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
 				76A7214A1FD80D6100FF9F99 /* LeadVideosController.m in Sources */,
 				76A7214D1FD80D7800FF9F99 /* SettingController.m in Sources */,
+				76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */,
 				76A721501FD80DDF00FF9F99 /* NativeVideosHomeController.m in Sources */,
 				76A721341FD807CD00FF9F99 /* MainViewController.m in Sources */,
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
