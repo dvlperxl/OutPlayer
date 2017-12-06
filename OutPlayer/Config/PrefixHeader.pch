@@ -13,6 +13,14 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "BaseHeader.h"
+
+#import "NSString+WDUtils.h"
+#import "UIBarButtonItem+RD_extension.h"
+#import "UIColor+Hex.h"
+
+#import "BaseViewController.h"
+#import "BaseNavigationController.h"
 
 #endif
 
