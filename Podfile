@@ -1,4 +1,4 @@
-# Uncomment the next line to define a global platform for your project
+inhibit_all_warnings!
 platform :ios, '8.0'
 
 target 'OutPlayer' do

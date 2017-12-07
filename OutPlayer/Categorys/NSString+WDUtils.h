@@ -11,7 +11,6 @@
 @interface NSString (WDUtils)
 
 - (BOOL)isEmpty;
-- (BOOL)isEmail;
 - (BOOL)isCellphoneNumber;
 
 //得到当前时间
