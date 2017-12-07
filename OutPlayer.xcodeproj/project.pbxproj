@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */; };
+		766040861FD8F6C60079BAEA /* NativeVideoFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040851FD8F6C60079BAEA /* NativeVideoFile.m */; };
+		766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */; };
+		7660408C1FD90D5C0079BAEA /* NativeVideosViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */; };
+		7660408F1FD90E4D0079BAEA /* NativeVideosServe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */; };
+		766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040921FD912390079BAEA /* NSArray+Safe.m */; };
+		7660409A1FD9123A0079BAEA /* NSMutableArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040941FD912390079BAEA /* NSMutableArray+safe.m */; };
+		7660409B1FD9123A0079BAEA /* NSMutableDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040961FD912390079BAEA /* NSMutableDictionary+safe.m */; };
+		7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */; };
+		7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */; };
 		76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A720F31FD7902400FF9F99 /* AppDelegate.m */; };
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
@@ -33,6 +42,24 @@
 
 /* Begin PBXFileReference section */
 		5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OutPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		766040841FD8F6C60079BAEA /* NativeVideoFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoFile.h; sourceTree = "<group>"; };
+		766040851FD8F6C60079BAEA /* NativeVideoFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoFile.m; sourceTree = "<group>"; };
+		766040871FD90BB00079BAEA /* NSNumber+DRM_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DRM_extension.h"; sourceTree = "<group>"; };
+		766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DRM_extension.m"; sourceTree = "<group>"; };
+		7660408A1FD90D5C0079BAEA /* NativeVideosViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideosViewModel.h; sourceTree = "<group>"; };
+		7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideosViewModel.m; sourceTree = "<group>"; };
+		7660408D1FD90E4D0079BAEA /* NativeVideosServe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideosServe.h; sourceTree = "<group>"; };
+		7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideosServe.m; sourceTree = "<group>"; };
+		766040911FD912390079BAEA /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		766040921FD912390079BAEA /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		766040931FD912390079BAEA /* NSMutableArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+safe.h"; sourceTree = "<group>"; };
+		766040941FD912390079BAEA /* NSMutableArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+safe.m"; sourceTree = "<group>"; };
+		766040951FD912390079BAEA /* NSMutableDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+safe.h"; sourceTree = "<group>"; };
+		766040961FD912390079BAEA /* NSMutableDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+safe.m"; sourceTree = "<group>"; };
+		766040971FD912390079BAEA /* NSObject+SwizzleMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzleMethod.h"; sourceTree = "<group>"; };
+		766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzleMethod.m"; sourceTree = "<group>"; };
+		7660409D1FD915110079BAEA /* UIImage+DRMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DRMExtension.h"; sourceTree = "<group>"; };
+		7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DRMExtension.m"; sourceTree = "<group>"; };
 		76A720EF1FD7902400FF9F99 /* OutPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720F21FD7902400FF9F99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76A720F31FD7902400FF9F99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		766040901FD912390079BAEA /* DataSafeCheck */ = {
+			isa = PBXGroup;
+			children = (
+				766040911FD912390079BAEA /* NSArray+Safe.h */,
+				766040921FD912390079BAEA /* NSArray+Safe.m */,
+				766040931FD912390079BAEA /* NSMutableArray+safe.h */,
+				766040941FD912390079BAEA /* NSMutableArray+safe.m */,
+				766040951FD912390079BAEA /* NSMutableDictionary+safe.h */,
+				766040961FD912390079BAEA /* NSMutableDictionary+safe.m */,
+				766040971FD912390079BAEA /* NSObject+SwizzleMethod.h */,
+				766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */,
+			);
+			path = DataSafeCheck;
+			sourceTree = "<group>";
+		};
 		76A720E61FD7902400FF9F99 = {
 			isa = PBXGroup;
 			children = (
@@ -164,10 +206,14 @@
 			children = (
 				76A721361FD809C600FF9F99 /* NSString+WDUtils.h */,
 				76A721371FD809C600FF9F99 /* NSString+WDUtils.m */,
+				766040871FD90BB00079BAEA /* NSNumber+DRM_extension.h */,
+				766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */,
 				76A7210E1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.h */,
 				76A7210D1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m */,
 				76A721391FD80BE600FF9F99 /* UIColor+Hex.h */,
 				76A7213A1FD80BE700FF9F99 /* UIColor+Hex.m */,
+				7660409D1FD915110079BAEA /* UIImage+DRMExtension.h */,
+				7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -270,6 +316,10 @@
 		76A7213C1FD80CD500FF9F99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7660408A1FD90D5C0079BAEA /* NativeVideosViewModel.h */,
+				7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */,
+				766040841FD8F6C60079BAEA /* NativeVideoFile.h */,
+				766040851FD8F6C60079BAEA /* NativeVideoFile.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,8 +389,11 @@
 		76A721571FD813CA00FF9F99 /* SystemUtils */ = {
 			isa = PBXGroup;
 			children = (
+				766040901FD912390079BAEA /* DataSafeCheck */,
 				76A721591FD813E600FF9F99 /* RDSandboxTool.h */,
 				76A721581FD813E600FF9F99 /* RDSandboxTool.m */,
+				7660408D1FD90E4D0079BAEA /* NativeVideosServe.h */,
+				7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */,
 			);
 			path = SystemUtils;
 			sourceTree = "<group>";
@@ -490,17 +543,26 @@
 			files = (
 				76A721201FD7EE4900FF9F99 /* TestLib.m in Sources */,
 				76A7213B1FD80BE700FF9F99 /* UIColor+Hex.m in Sources */,
+				766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */,
+				7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */,
 				76A721471FD80D3A00FF9F99 /* BaseViewController.m in Sources */,
 				76A721381FD809C600FF9F99 /* NSString+WDUtils.m in Sources */,
 				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
 				76A7214A1FD80D6100FF9F99 /* LeadVideosController.m in Sources */,
 				76A7214D1FD80D7800FF9F99 /* SettingController.m in Sources */,
+				766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */,
+				7660408F1FD90E4D0079BAEA /* NativeVideosServe.m in Sources */,
+				766040861FD8F6C60079BAEA /* NativeVideoFile.m in Sources */,
 				76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */,
+				7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */,
+				7660409A1FD9123A0079BAEA /* NSMutableArray+safe.m in Sources */,
+				7660409B1FD9123A0079BAEA /* NSMutableDictionary+safe.m in Sources */,
 				76A721501FD80DDF00FF9F99 /* NativeVideosHomeController.m in Sources */,
 				76A721341FD807CD00FF9F99 /* MainViewController.m in Sources */,
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
 				76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */,
 				76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */,
+				7660408C1FD90D5C0079BAEA /* NativeVideosViewModel.m in Sources */,
 				76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BE96T6BL3K;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";
@@ -665,6 +728,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BE96T6BL3K;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";

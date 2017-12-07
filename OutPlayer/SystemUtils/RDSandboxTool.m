@@ -99,39 +99,65 @@
         return [[mgr attributesOfItemAtPath:path error:nil][NSFileSize] integerValue];
     }
 }
++ (NSNumber *)fileSizeByteNumbWithPath:(NSString *)path {
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    // 判断是否为文件
+    BOOL dir = NO;
+    BOOL exists = [mgr fileExistsAtPath:path isDirectory:&dir];
+    // 文件\文件夹不存在
+    if (exists == NO) return [NSNumber numberWithInteger:0];
+    if (dir) { // 是一个文件夹
+        // 遍历path里面的所有内容
+        NSArray *subpaths = [mgr subpathsAtPath:path];
+        NSInteger totalByteSize = 0;
+        for (NSString *subpath in subpaths) {
+            // 获得全路径
+            NSString *fullSubpath = [path stringByAppendingPathComponent:subpath];
+            // 判断是否为文件
+            BOOL dir = NO;
+            [mgr fileExistsAtPath:fullSubpath isDirectory:&dir];
+            if (dir == NO) { // 文件
+                totalByteSize += [[mgr attributesOfItemAtPath:fullSubpath error:nil][NSFileSize] integerValue];
+            }
+        }
+        return [NSNumber numberWithLongLong:totalByteSize];
+    } else { // 是一个文件
+        return [mgr attributesOfItemAtPath:path error:nil][NSFileSize];
+    }
+}
+
 /** 删除文件/文件夹*/
 + (BOOL)removeFileWithPath:(NSString *)path {
     NSFileManager *mgr = [NSFileManager defaultManager];
     return [mgr removeItemAtPath:path error:nil];
 }
-
-// 磁盘总空间大小
-+ (CGFloat)diskOfAllSizeMBytes
-{
-    CGFloat size = 0.0;
-    NSError *error;
-    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
-    if (error) {
-        NSLog(@"error: %@", error.localizedDescription);
-    }else{
-        NSNumber *number = [dic objectForKey:NSFileSystemSize];
-        size = [number floatValue]/1024/1024;
-    }
-    return size;
++ (BOOL)removeFileWithUrl:(NSURL *)url {
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    return [mgr removeItemAtURL:url error:nil];
 }
 
-// 磁盘可用空间大小
-+ (CGFloat)diskOfFreeSizeMBytes
-{
-    CGFloat size = 0.0;
+/** 磁盘总空间大小 */
++ (NSNumber *)diskOfAllSize {
+    NSNumber *number = [NSNumber numberWithInteger:0];
     NSError *error;
     NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
     if (error) {
         NSLog(@"error: %@", error.localizedDescription);
     }else{
-        NSNumber *number = [dic objectForKey:NSFileSystemFreeSize];
-        size = [number floatValue]/1024/1024;
+        number = [dic objectForKey:NSFileSystemSize];
     }
-    return size;
+    return number;
+}
+/** 磁盘可用空间大小*/
++ (NSNumber *)diskOfFreeSize {
+    NSNumber *number = [NSNumber numberWithInteger:0];
+    NSError *error;
+    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) {
+        NSLog(@"error: %@", error.localizedDescription);
+    }else{
+        number = [dic objectForKey:NSFileSystemFreeSize];
+    }
+    return number;
 }
 @end

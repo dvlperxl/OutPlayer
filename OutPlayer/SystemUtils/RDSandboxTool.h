@@ -34,13 +34,16 @@
  @param path 文件路径，可传文件夹路径或者文件路径
  */
 + (NSUInteger)fileSizeWithPath:(NSString *)path;
++ (NSNumber *)fileSizeByteNumbWithPath:(NSString *)path;
 
 /** 删除文件/文件夹*/
 + (BOOL)removeFileWithPath:(NSString *)path;
++ (BOOL)removeFileWithUrl:(NSURL *)url;
 
-/** 磁盘总空间大小 */ //单位为M
-+ (CGFloat)diskOfAllSizeMBytes;
+/** 磁盘总空间大小 */ 
++ (NSNumber *)diskOfAllSize;
 
-/** 磁盘可用空间大小*/ //单位为M
-+ (CGFloat)diskOfFreeSizeMBytes;
+/** 磁盘可用空间大小*/
++ (NSNumber *)diskOfFreeSize;
+
 @end

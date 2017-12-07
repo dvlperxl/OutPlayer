@@ -8,4 +8,5 @@ target 'OutPlayer' do
     pod 'AFNetworking'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
+    pod 'YYModel'
 end
