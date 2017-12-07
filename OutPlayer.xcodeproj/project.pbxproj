@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */; };
 		76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A720F31FD7902400FF9F99 /* AppDelegate.m */; };
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OutPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720EF1FD7902400FF9F99 /* OutPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720F21FD7902400FF9F99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76A720F31FD7902400FF9F99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		76A721551FD80F8200FF9F99 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		76A721581FD813E600FF9F99 /* RDSandboxTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSandboxTool.m; sourceTree = "<group>"; };
 		76A721591FD813E600FF9F99 /* RDSandboxTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSandboxTool.h; sourceTree = "<group>"; };
+		C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,7 @@
 				76A720F11FD7902400FF9F99 /* OutPlayer */,
 				76A720F01FD7902400FF9F99 /* Products */,
 				76A721161FD7DEFB00FF9F99 /* Frameworks */,
+				E76BED1389E4DBB66893F6B2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				76A721171FD7E07D00FF9F99 /* MediaPlayer.framework */,
+				5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -338,6 +345,15 @@
 			path = SystemUtils;
 			sourceTree = "<group>";
 		};
+		E76BED1389E4DBB66893F6B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */,
+				F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,9 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76A721051FD7902400FF9F99 /* Build configuration list for PBXNativeTarget "OutPlayer" */;
 			buildPhases = (
+				6E9324A29F32472F12566C48 /* [CP] Check Pods Manifest.lock */,
 				76A720EB1FD7902400FF9F99 /* Sources */,
 				76A720EC1FD7902400FF9F99 /* Frameworks */,
 				76A720ED1FD7902400FF9F99 /* Resources */,
+				23A4B55B5DF8D0E5109D3F84 /* [CP] Embed Pods Frameworks */,
+				96864C6BD7CB62E0FB9B056E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,6 +427,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23A4B55B5DF8D0E5109D3F84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E9324A29F32472F12566C48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OutPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96864C6BD7CB62E0FB9B056E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76A720EB1FD7902400FF9F99 /* Sources */ = {
@@ -571,6 +645,7 @@
 		};
 		76A721061FD7902400FF9F99 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +661,7 @@
 		};
 		76A721071FD7902400FF9F99 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
