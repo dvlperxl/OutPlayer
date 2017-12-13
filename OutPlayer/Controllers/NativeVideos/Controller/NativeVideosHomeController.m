@@ -27,7 +27,7 @@
 
 - (void)loadData {
     NativeVideosServe *serve = [[NativeVideosServe alloc]init];
-    [serve nativeVideosAsyncBlock:^(NSArray *videos) {
+    [serve nativeVideosCompletion:^(NSArray *videos) {
         self.nativeVideos = [NSArray yy_modelArrayWithClass:[NativeVideoFile class] json:videos].mutableCopy;
         [self.tableView reloadData];
     }];

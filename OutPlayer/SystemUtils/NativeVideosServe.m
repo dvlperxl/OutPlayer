@@ -7,7 +7,7 @@
 //
 
 #import "NativeVideosServe.h"
-#import <AVFoundation/AVFoundation.h>
+#import "MediaThumbTool.h"
 
 NSInteger const videoThumbAtTime = 5;
 
@@ -19,41 +19,36 @@ NSInteger const videoThumbAtTime = 5;
 @implementation NativeVideosServe
 
 #pragma mark - public
-- (NSArray *)nativeVideos {
-    return [self videosForDirectory:[RDSandboxTool DocumentsDirectory]];
-}
-- (void)nativeVideosAsyncBlock:(void (^)(NSArray *videos))completion {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //子线程获取本地视频
-        NSArray *videos = [self videosForDirectory:[RDSandboxTool DocumentsDirectory]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (completion) {
-                completion(videos);
-            }
-        });
-    });
+- (void)nativeVideosCompletion:(void (^)(NSArray *videos))completionBlock {
+    [self videosForDirectory:[RDSandboxTool DocumentsDirectory] completion:completionBlock];
 }
 - (BOOL)removeVideoAtURL:(NSURL *)url {
     return [RDSandboxTool removeFileWithUrl:url];
 }
 #pragma mark - private
-- (NSArray *)videosForDirectory:(NSString *)directory {
+- (void)videosForDirectory:(NSString *)directory completion:(void (^)(NSArray *videos))completionBlock {
     if (!directory) {
-        return nil;
+        if (completionBlock) {
+            completionBlock(nil);
+        }
     }
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     NSArray *fileNames = [fileMgr contentsOfDirectoryAtPath:directory error:nil];
     if (!fileNames || fileNames.count == 0) {
-        return nil;
+        if (completionBlock) {
+            completionBlock(nil);
+        }
     }
+    dispatch_group_t group = dispatch_group_create();
     NSMutableArray *videos = [NSMutableArray arrayWithCapacity:fileNames.count];
     for (NSString *fileName in fileNames) {
         BOOL flag = YES;
-        NSString* fullPath = [directory stringByAppendingPathComponent:fileName];
+        NSString *fullPath = [directory stringByAppendingPathComponent:fileName];
         if ([fileMgr fileExistsAtPath:fullPath isDirectory:&flag]) {
             if (!flag) {  // 是文件，非文件夹
                 NSString *extension = [fileName.pathExtension lowercaseString];
                 if ([self.supportMediaTypeList containsObject:extension]) {  // 是播放器支持的格式
+                    dispatch_group_enter(group);
                     NSMutableDictionary *video = [NSMutableDictionary dictionary];
                     // 视频名称
                     [video setObject:fileName forKey:@"videoTitle"];
@@ -62,13 +57,20 @@ NSInteger const videoThumbAtTime = 5;
                     // 文件大小
                     [video setObject:[RDSandboxTool fileSizeByteNumbWithPath:fullPath].cachesFormat forKey:@"videoSize"];
                     // 视频缩略图
-//                    [video setObject:[UIImage imageWithAsset:asset time:videoThumbAtTime] forKey:@"videoThumb"];
-                    [videos addObject:video.copy];
+                    [[MediaThumbTool sharedInstance]thumbForUrl:[NSURL fileURLWithPath:fullPath] completed:^(UIImage * _Nullable image, NSError * _Nullable error, BOOL finished) {
+                        [video setObject:image forKey:@"videoThumb"];
+                        [videos addObject:video.copy];
+                        dispatch_group_leave(group);
+                    }];
                 }
             }
         }
     }
-    return videos.copy;
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        if (completionBlock) {
+            completionBlock(videos);
+        }
+    });
 }
 
 #pragma mark - getter

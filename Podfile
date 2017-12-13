@@ -9,4 +9,5 @@ target 'OutPlayer' do
     pod 'SVProgressHUD'
     pod 'MJRefresh'
     pod 'YYModel'
+    pod 'MobileVLCKit'
 end

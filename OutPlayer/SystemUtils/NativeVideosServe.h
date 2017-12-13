@@ -10,16 +10,10 @@
 
 @interface NativeVideosServe : NSObject
 
-
 /**
- 本地视频（Documents文件夹下）
+ 获取本地视频（Documents文件夹下）
  */
-- (NSArray *)nativeVideos;
-
-/**
- 异步获取本地视频（Documents文件夹下）
- */
-- (void)nativeVideosAsyncBlock:(void (^)(NSArray *videos))completion;
+- (void)nativeVideosCompletion:(void (^)(NSArray *videos))completionBlock;
 /**
  删除视频
  */
