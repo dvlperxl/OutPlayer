@@ -10,13 +10,13 @@
 		501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */; };
 		766040861FD8F6C60079BAEA /* NativeVideoFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040851FD8F6C60079BAEA /* NativeVideoFile.m */; };
 		766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */; };
-		7660408C1FD90D5C0079BAEA /* NativeVideosViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */; };
 		7660408F1FD90E4D0079BAEA /* NativeVideosServe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */; };
 		766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040921FD912390079BAEA /* NSArray+Safe.m */; };
 		7660409A1FD9123A0079BAEA /* NSMutableArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040941FD912390079BAEA /* NSMutableArray+safe.m */; };
 		7660409B1FD9123A0079BAEA /* NSMutableDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040961FD912390079BAEA /* NSMutableDictionary+safe.m */; };
 		7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */; };
 		7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */; };
+		766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040A11FD92AF40079BAEA /* NativeVideoListCell.m */; };
 		76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A720F31FD7902400FF9F99 /* AppDelegate.m */; };
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
@@ -38,6 +38,7 @@
 		76A721541FD80F7600FF9F99 /* LeadVideos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A721531FD80F7600FF9F99 /* LeadVideos.storyboard */; };
 		76A721561FD80F8200FF9F99 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A721551FD80F8200FF9F99 /* Setting.storyboard */; };
 		76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721581FD813E600FF9F99 /* RDSandboxTool.m */; };
+		76AC16791FE101BD005D4C48 /* SupportedMediaType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +47,6 @@
 		766040851FD8F6C60079BAEA /* NativeVideoFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoFile.m; sourceTree = "<group>"; };
 		766040871FD90BB00079BAEA /* NSNumber+DRM_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DRM_extension.h"; sourceTree = "<group>"; };
 		766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DRM_extension.m"; sourceTree = "<group>"; };
-		7660408A1FD90D5C0079BAEA /* NativeVideosViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideosViewModel.h; sourceTree = "<group>"; };
-		7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideosViewModel.m; sourceTree = "<group>"; };
 		7660408D1FD90E4D0079BAEA /* NativeVideosServe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideosServe.h; sourceTree = "<group>"; };
 		7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideosServe.m; sourceTree = "<group>"; };
 		766040911FD912390079BAEA /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
@@ -60,6 +59,9 @@
 		766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzleMethod.m"; sourceTree = "<group>"; };
 		7660409D1FD915110079BAEA /* UIImage+DRMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DRMExtension.h"; sourceTree = "<group>"; };
 		7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DRMExtension.m"; sourceTree = "<group>"; };
+		766040A01FD92AF40079BAEA /* NativeVideoListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoListCell.h; sourceTree = "<group>"; };
+		766040A11FD92AF40079BAEA /* NativeVideoListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoListCell.m; sourceTree = "<group>"; };
+		766040A31FD92F9E0079BAEA /* DRMReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRMReactView.h; sourceTree = "<group>"; };
 		76A720EF1FD7902400FF9F99 /* OutPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720F21FD7902400FF9F99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76A720F31FD7902400FF9F99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		76A721551FD80F8200FF9F99 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		76A721581FD813E600FF9F99 /* RDSandboxTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSandboxTool.m; sourceTree = "<group>"; };
 		76A721591FD813E600FF9F99 /* RDSandboxTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSandboxTool.h; sourceTree = "<group>"; };
+		76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SupportedMediaType.plist; sourceTree = "<group>"; };
 		C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				76A721001FD7902400FF9F99 /* Info.plist */,
+				76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */,
 				76A721251FD7F03F00FF9F99 /* InfoPlist.strings */,
 				76A7212B1FD7F12000FF9F99 /* Localizable.strings */,
 				76A721351FD8089D00FF9F99 /* BaseHeader.h */,
@@ -193,6 +197,7 @@
 		76A7210B1FD7DD5400FF9F99 /* BassClass */ = {
 			isa = PBXGroup;
 			children = (
+				766040A31FD92F9E0079BAEA /* DRMReactView.h */,
 				76A721451FD80D3A00FF9F99 /* BaseViewController.h */,
 				76A721461FD80D3A00FF9F99 /* BaseViewController.m */,
 				76A721101FD7DDBC00FF9F99 /* BaseNavigationController.h */,
@@ -316,8 +321,6 @@
 		76A7213C1FD80CD500FF9F99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7660408A1FD90D5C0079BAEA /* NativeVideosViewModel.h */,
-				7660408B1FD90D5C0079BAEA /* NativeVideosViewModel.m */,
 				766040841FD8F6C60079BAEA /* NativeVideoFile.h */,
 				766040851FD8F6C60079BAEA /* NativeVideoFile.m */,
 			);
@@ -327,6 +330,8 @@
 		76A7213D1FD80CDD00FF9F99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				766040A01FD92AF40079BAEA /* NativeVideoListCell.h */,
+				766040A11FD92AF40079BAEA /* NativeVideoListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 			files = (
 				76A721291FD7F12000FF9F99 /* Localizable.strings in Resources */,
 				76A721521FD80F6000FF9F99 /* NativeVideos.storyboard in Resources */,
+				76AC16791FE101BD005D4C48 /* SupportedMediaType.plist in Resources */,
 				76A721541FD80F7600FF9F99 /* LeadVideos.storyboard in Resources */,
 				76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */,
 				76A721231FD7F03F00FF9F99 /* InfoPlist.strings in Resources */,
@@ -546,6 +552,7 @@
 				766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */,
 				7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */,
 				76A721471FD80D3A00FF9F99 /* BaseViewController.m in Sources */,
+				766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */,
 				76A721381FD809C600FF9F99 /* NSString+WDUtils.m in Sources */,
 				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
 				76A7214A1FD80D6100FF9F99 /* LeadVideosController.m in Sources */,
@@ -562,7 +569,6 @@
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
 				76A720F41FD7902400FF9F99 /* AppDelegate.m in Sources */,
 				76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */,
-				7660408C1FD90D5C0079BAEA /* NativeVideosViewModel.m in Sources */,
 				76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

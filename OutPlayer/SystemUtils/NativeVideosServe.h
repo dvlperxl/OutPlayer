@@ -17,6 +17,10 @@
 - (NSArray *)nativeVideos;
 
 /**
+ 异步获取本地视频（Documents文件夹下）
+ */
+- (void)nativeVideosAsyncBlock:(void (^)(NSArray *videos))completion;
+/**
  删除视频
  */
 - (BOOL)removeVideoAtURL:(NSURL *)url;

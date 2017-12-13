@@ -11,11 +11,27 @@
 
 NSInteger const videoThumbAtTime = 5;
 
+@interface NativeVideosServe ()
+
+@property (nonatomic,copy) NSArray *supportMediaTypeList;
+@end
+
 @implementation NativeVideosServe
 
 #pragma mark - public
 - (NSArray *)nativeVideos {
     return [self videosForDirectory:[RDSandboxTool DocumentsDirectory]];
+}
+- (void)nativeVideosAsyncBlock:(void (^)(NSArray *videos))completion {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //子线程获取本地视频
+        NSArray *videos = [self videosForDirectory:[RDSandboxTool DocumentsDirectory]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion(videos);
+            }
+        });
+    });
 }
 - (BOOL)removeVideoAtURL:(NSURL *)url {
     return [RDSandboxTool removeFileWithUrl:url];
@@ -36,11 +52,8 @@ NSInteger const videoThumbAtTime = 5;
         NSString* fullPath = [directory stringByAppendingPathComponent:fileName];
         if ([fileMgr fileExistsAtPath:fullPath isDirectory:&flag]) {
             if (!flag) {  // 是文件，非文件夹
-                // 判断是否是视频文件
-                AVAsset *asset = [AVURLAsset assetWithURL:[NSURL fileURLWithPath:fullPath]];
-                NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
-                BOOL hasVideoTrack = [tracks count] > 0;
-                if (hasVideoTrack) {
+                NSString *extension = [fileName.pathExtension lowercaseString];
+                if ([self.supportMediaTypeList containsObject:extension]) {  // 是播放器支持的格式
                     NSMutableDictionary *video = [NSMutableDictionary dictionary];
                     // 视频名称
                     [video setObject:fileName forKey:@"videoTitle"];
@@ -49,7 +62,7 @@ NSInteger const videoThumbAtTime = 5;
                     // 文件大小
                     [video setObject:[RDSandboxTool fileSizeByteNumbWithPath:fullPath].cachesFormat forKey:@"videoSize"];
                     // 视频缩略图
-                    [video setObject:[UIImage imageWithAsset:asset time:videoThumbAtTime] forKey:@"videoThumb"];
+//                    [video setObject:[UIImage imageWithAsset:asset time:videoThumbAtTime] forKey:@"videoThumb"];
                     [videos addObject:video.copy];
                 }
             }
@@ -58,5 +71,12 @@ NSInteger const videoThumbAtTime = 5;
     return videos.copy;
 }
 
-
+#pragma mark - getter
+- (NSArray *)supportMediaTypeList {
+    if (!_supportMediaTypeList) {
+        NSString *file = [[NSBundle mainBundle] pathForResource:@"SupportedMediaType" ofType:@"plist"];
+        _supportMediaTypeList = [NSArray arrayWithContentsOfFile:file];
+    }
+    return _supportMediaTypeList;
+}
 @end

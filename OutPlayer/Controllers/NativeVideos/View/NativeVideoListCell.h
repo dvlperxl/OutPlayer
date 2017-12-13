@@ -1,13 +1,13 @@
 //
-//  NativeVideosViewModel.h
+//  NativeVideoListCell.h
 //  OutPlayer
 //
 //  Created by xl on 2017/12/7.
 //  Copyright © 2017年 xl. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface NativeVideosViewModel : NSObject
+@interface NativeVideoListCell : UITableViewCell<DRMReactView>
 
 @end
