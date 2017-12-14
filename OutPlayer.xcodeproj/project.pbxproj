@@ -17,6 +17,9 @@
 		7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */; };
 		7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */; };
 		766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040A11FD92AF40079BAEA /* NativeVideoListCell.m */; };
+		769648701FE27A3B00B3F68F /* MRVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 769648691FE27A3A00B3F68F /* MRVideoControlView.m */; };
+		769648711FE27A3B00B3F68F /* MRVideoHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */; };
+		769648721FE27A3B00B3F68F /* MRVLCPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */; };
 		76A720F41FD7902400FF9F99 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76A720F31FD7902400FF9F99 /* AppDelegate.mm */; };
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
@@ -24,7 +27,6 @@
 		76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7210D1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m */; };
 		76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721111FD7DDBC00FF9F99 /* BaseNavigationController.m */; };
 		76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7211C1FD7EDCC00FF9F99 /* HttpRequestManager.m */; };
-		76A721201FD7EE4900FF9F99 /* TestLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A7211F1FD7EE4900FF9F99 /* TestLib.m */; };
 		76A721231FD7F03F00FF9F99 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76A721251FD7F03F00FF9F99 /* InfoPlist.strings */; };
 		76A721291FD7F12000FF9F99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76A7212B1FD7F12000FF9F99 /* Localizable.strings */; };
 		76A721341FD807CD00FF9F99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721331FD807CD00FF9F99 /* MainViewController.m */; };
@@ -63,6 +65,13 @@
 		766040A01FD92AF40079BAEA /* NativeVideoListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoListCell.h; sourceTree = "<group>"; };
 		766040A11FD92AF40079BAEA /* NativeVideoListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoListCell.m; sourceTree = "<group>"; };
 		766040A31FD92F9E0079BAEA /* DRMReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRMReactView.h; sourceTree = "<group>"; };
+		769648691FE27A3A00B3F68F /* MRVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRVideoControlView.m; sourceTree = "<group>"; };
+		7696486A1FE27A3A00B3F68F /* MRVideoHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoHUDView.h; sourceTree = "<group>"; };
+		7696486B1FE27A3B00B3F68F /* MRVLCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVLCPlayer.h; sourceTree = "<group>"; };
+		7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRVideoHUDView.m; sourceTree = "<group>"; };
+		7696486D1FE27A3B00B3F68F /* MRVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoControlView.h; sourceTree = "<group>"; };
+		7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MRVLCPlayer.mm; sourceTree = "<group>"; };
+		7696486F1FE27A3B00B3F68F /* MRVideoConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoConst.h; sourceTree = "<group>"; };
 		76A720EF1FD7902400FF9F99 /* OutPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720F21FD7902400FF9F99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76A720F31FD7902400FF9F99 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -78,8 +87,6 @@
 		76A721191FD7E2D400FF9F99 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		76A7211B1FD7EDCC00FF9F99 /* HttpRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
 		76A7211C1FD7EDCC00FF9F99 /* HttpRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
-		76A7211E1FD7EE4900FF9F99 /* TestLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLib.h; sourceTree = "<group>"; };
-		76A7211F1FD7EE4900FF9F99 /* TestLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLib.m; sourceTree = "<group>"; };
 		76A721241FD7F03F00FF9F99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		76A721261FD7F06100FF9F99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		76A7212A1FD7F12000FF9F99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -136,6 +143,20 @@
 				766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */,
 			);
 			path = DataSafeCheck;
+			sourceTree = "<group>";
+		};
+		769648681FE27A2200B3F68F /* MRVLCPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7696486F1FE27A3B00B3F68F /* MRVideoConst.h */,
+				7696486D1FE27A3B00B3F68F /* MRVideoControlView.h */,
+				769648691FE27A3A00B3F68F /* MRVideoControlView.m */,
+				7696486A1FE27A3A00B3F68F /* MRVideoHUDView.h */,
+				7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */,
+				7696486B1FE27A3B00B3F68F /* MRVLCPlayer.h */,
+				7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */,
+			);
+			path = MRVLCPlayer;
 			sourceTree = "<group>";
 		};
 		76A720E61FD7902400FF9F99 = {
@@ -249,8 +270,7 @@
 		76A721151FD7DEC700FF9F99 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				76A7211E1FD7EE4900FF9F99 /* TestLib.h */,
-				76A7211F1FD7EE4900FF9F99 /* TestLib.m */,
+				769648681FE27A2200B3F68F /* MRVLCPlayer */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -552,14 +572,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A721201FD7EE4900FF9F99 /* TestLib.m in Sources */,
 				76A7213B1FD80BE700FF9F99 /* UIColor+Hex.m in Sources */,
 				766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */,
+				769648701FE27A3B00B3F68F /* MRVideoControlView.m in Sources */,
 				7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */,
 				76A721471FD80D3A00FF9F99 /* BaseViewController.m in Sources */,
 				766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */,
+				769648711FE27A3B00B3F68F /* MRVideoHUDView.m in Sources */,
 				76A721381FD809C600FF9F99 /* NSString+WDUtils.m in Sources */,
 				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
+				769648721FE27A3B00B3F68F /* MRVLCPlayer.mm in Sources */,
 				76A7214A1FD80D6100FF9F99 /* LeadVideosController.m in Sources */,
 				76A7214D1FD80D7800FF9F99 /* SettingController.m in Sources */,
 				766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */,
