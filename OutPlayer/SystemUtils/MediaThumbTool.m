@@ -28,7 +28,8 @@
 - (void)thumbForUrl:(NSURL *_Nullable)url completed:(nullable MediaThumbToolCompletedBlock)completedBlock {
     if (!url) {
         if (completedBlock) {
-            completedBlock(nil,nil,NO);
+            NSError *error = [NSError errorWithDomain:@"ErrorFromInput" code:404 userInfo:@{NSLocalizedDescriptionKey:@"地址为空"}];
+            completedBlock(nil,error,NO);
         }
         return;
     }
@@ -44,7 +45,8 @@
 - (void)mediaThumbnailerDidTimeOut:(VLCMediaThumbnailer *)mediaThumbnailer {
     MediaThumbToolCompletedBlock completedBlock = [self.completedBlockDic objectForKey:mediaThumbnailer.media.url.absoluteString];
     if (completedBlock) {
-        completedBlock(nil,nil,NO);
+        NSError *error = [NSError errorWithDomain:@"ErrorFromInput" code: 400 userInfo:@{NSLocalizedDescriptionKey:@"无法获取帧图片"}];
+        completedBlock(nil,error,NO);
         [self.completedBlockDic removeObjectForKey:mediaThumbnailer.media.url.absoluteString];
     }
     
