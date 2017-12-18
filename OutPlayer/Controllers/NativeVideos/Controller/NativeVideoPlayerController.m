@@ -9,7 +9,7 @@
 #import "NativeVideoPlayerController.h"
 #import "ZFPlayer.h"
 
-@interface NativeVideoPlayerController ()
+@interface NativeVideoPlayerController ()<ZFPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *fatherPlayerView;
 @property (nonatomic,strong) ZFPlayerView *player;
@@ -17,8 +17,13 @@
 
 @implementation NativeVideoPlayerController
 - (void)dealloc {
-    NSLog(@"%@释放了",self.class);
     [self.player stop];
+}
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+- (BOOL)prefersStatusBarHidden {
+    return ZFPlayerShared.isStatusBarHidden;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,11 +39,15 @@
     [self.player playerModel:playerModel];
     [self.player autoPlayTheVideo];
 }
-
+#pragma mark - ZFPlayerDelegate
+- (void)zf_playerBackAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - getter
 - (ZFPlayerView *)player {
     if (!_player) {
         _player = [[ZFPlayerView alloc] init];
+        _player.delegate = self;
     }
     return _player;
 }
