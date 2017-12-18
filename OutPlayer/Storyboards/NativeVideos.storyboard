@@ -98,5 +98,40 @@
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="173.16341829085459"/>
         </scene>
+        <!--Native Video Player Controller-->
+        <scene sceneID="F0a-oj-48A">
+            <objects>
+                <viewController storyboardIdentifier="NativeVideoPlayerController" id="bje-NM-Ezh" customClass="NativeVideoPlayerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v4x-1u-7jS"/>
+                        <viewControllerLayoutGuide type="bottom" id="8m6-qp-Q0z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WF2-WM-KgX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7E-oM-avo">
+                                <rect key="frame" x="0.0" y="227.5" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u7E-oM-avo" secondAttribute="height" multiplier="16:9" id="CCO-gN-wks"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u7E-oM-avo" firstAttribute="leading" secondItem="WF2-WM-KgX" secondAttribute="leading" id="1bf-dc-hWX"/>
+                            <constraint firstItem="u7E-oM-avo" firstAttribute="centerY" secondItem="WF2-WM-KgX" secondAttribute="centerY" id="BwM-rN-pVk"/>
+                            <constraint firstItem="u7E-oM-avo" firstAttribute="centerX" secondItem="WF2-WM-KgX" secondAttribute="centerX" id="sba-zG-rpL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fatherPlayerView" destination="u7E-oM-avo" id="UZW-YM-Rhb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oga-EN-x52" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="173"/>
+        </scene>
     </scenes>
 </document>

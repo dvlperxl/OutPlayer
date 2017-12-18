@@ -10,6 +10,7 @@
 #import "NativeVideosServe.h"
 #import "NativeVideoFile.h"
 #import "NativeVideoListCell.h"
+#import "NativeVideoPlayerController.h"
 
 @interface NativeVideosHomeController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -46,5 +47,13 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 90.0f;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NativeVideoFile *video = self.nativeVideos[indexPath.row];
+    NativeVideoPlayerController *playerVC = VCFrom(@"NativeVideos", @"NativeVideoPlayerController");
+    playerVC.mediaUrl = video.videoUrl;
+    playerVC.videoTitle = video.videoTitle;
+    playerVC.videoThumb = video.videoThumb;
+    [self.navigationController pushViewController:playerVC animated:YES];
 }
 @end

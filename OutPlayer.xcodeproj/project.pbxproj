@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */; };
+		351CDD5EB28421ABEF8A3F4B /* Pods_OutPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E45F8DA0C12402F9FE262 /* Pods_OutPlayer.framework */; };
+		762116D61FE3719C00B6751D /* NativeVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762116D51FE3719C00B6751D /* NativeVideoPlayerController.m */; };
 		766040861FD8F6C60079BAEA /* NativeVideoFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040851FD8F6C60079BAEA /* NativeVideoFile.m */; };
 		766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040881FD90BB00079BAEA /* NSNumber+DRM_extension.m */; };
 		7660408F1FD90E4D0079BAEA /* NativeVideosServe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660408E1FD90E4D0079BAEA /* NativeVideosServe.m */; };
@@ -17,9 +18,21 @@
 		7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040981FD912390079BAEA /* NSObject+SwizzleMethod.m */; };
 		7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7660409E1FD915110079BAEA /* UIImage+DRMExtension.m */; };
 		766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 766040A11FD92AF40079BAEA /* NativeVideoListCell.m */; };
-		769648701FE27A3B00B3F68F /* MRVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 769648691FE27A3A00B3F68F /* MRVideoControlView.m */; };
-		769648711FE27A3B00B3F68F /* MRVideoHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */; };
-		769648721FE27A3B00B3F68F /* MRVLCPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */; };
+		76921AB71FE3AE490072572C /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921A981FE3AE480072572C /* ASValuePopUpView.m */; };
+		76921AB81FE3AE490072572C /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921A9A1FE3AE480072572C /* ASValueTrackingSlider.m */; };
+		76921AB91FE3AE490072572C /* UIAlertController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921A9D1FE3AE480072572C /* UIAlertController+ZFPlayerRotation.m */; };
+		76921ABA1FE3AE490072572C /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921A9F1FE3AE480072572C /* UIImageView+ZFCache.m */; };
+		76921ABB1FE3AE490072572C /* UINavigationController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AA11FE3AE480072572C /* UINavigationController+ZFPlayerRotation.m */; };
+		76921ABC1FE3AE490072572C /* UITabBarController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AA31FE3AE480072572C /* UITabBarController+ZFPlayerRotation.m */; };
+		76921ABD1FE3AE490072572C /* UIView+CustomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AA51FE3AE480072572C /* UIView+CustomControlView.m */; };
+		76921ABE1FE3AE490072572C /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AA71FE3AE480072572C /* UIViewController+ZFPlayerRotation.m */; };
+		76921ABF1FE3AE490072572C /* UIWindow+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AA91FE3AE480072572C /* UIWindow+CurrentViewController.m */; };
+		76921AC01FE3AE490072572C /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AAB1FE3AE480072572C /* MMMaterialDesignSpinner.m */; };
+		76921AC11FE3AE490072572C /* ZFBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AAD1FE3AE480072572C /* ZFBrightnessView.m */; };
+		76921AC21FE3AE490072572C /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76921AAE1FE3AE480072572C /* ZFPlayer.bundle */; };
+		76921AC31FE3AE490072572C /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AB11FE3AE480072572C /* ZFPlayerControlView.m */; };
+		76921AC41FE3AE490072572C /* ZFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AB41FE3AE480072572C /* ZFPlayerModel.m */; };
+		76921AC51FE3AE490072572C /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76921AB61FE3AE480072572C /* ZFPlayerView.m */; };
 		76A720F41FD7902400FF9F99 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76A720F31FD7902400FF9F99 /* AppDelegate.mm */; };
 		76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FB1FD7902400FF9F99 /* Assets.xcassets */; };
 		76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A720FD1FD7902400FF9F99 /* LaunchScreen.storyboard */; };
@@ -45,7 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OutPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762116D41FE3719C00B6751D /* NativeVideoPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoPlayerController.h; sourceTree = "<group>"; };
+		762116D51FE3719C00B6751D /* NativeVideoPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoPlayerController.m; sourceTree = "<group>"; };
 		766040841FD8F6C60079BAEA /* NativeVideoFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoFile.h; sourceTree = "<group>"; };
 		766040851FD8F6C60079BAEA /* NativeVideoFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoFile.m; sourceTree = "<group>"; };
 		766040871FD90BB00079BAEA /* NSNumber+DRM_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DRM_extension.h"; sourceTree = "<group>"; };
@@ -65,13 +79,37 @@
 		766040A01FD92AF40079BAEA /* NativeVideoListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideoListCell.h; sourceTree = "<group>"; };
 		766040A11FD92AF40079BAEA /* NativeVideoListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideoListCell.m; sourceTree = "<group>"; };
 		766040A31FD92F9E0079BAEA /* DRMReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRMReactView.h; sourceTree = "<group>"; };
-		769648691FE27A3A00B3F68F /* MRVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRVideoControlView.m; sourceTree = "<group>"; };
-		7696486A1FE27A3A00B3F68F /* MRVideoHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoHUDView.h; sourceTree = "<group>"; };
-		7696486B1FE27A3B00B3F68F /* MRVLCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVLCPlayer.h; sourceTree = "<group>"; };
-		7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRVideoHUDView.m; sourceTree = "<group>"; };
-		7696486D1FE27A3B00B3F68F /* MRVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoControlView.h; sourceTree = "<group>"; };
-		7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MRVLCPlayer.mm; sourceTree = "<group>"; };
-		7696486F1FE27A3B00B3F68F /* MRVideoConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRVideoConst.h; sourceTree = "<group>"; };
+		76921A971FE3AE480072572C /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		76921A981FE3AE480072572C /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		76921A991FE3AE480072572C /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		76921A9A1FE3AE480072572C /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
+		76921A9C1FE3AE480072572C /* UIAlertController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		76921A9D1FE3AE480072572C /* UIAlertController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		76921A9E1FE3AE480072572C /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZFCache.h"; sourceTree = "<group>"; };
+		76921A9F1FE3AE480072572C /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZFCache.m"; sourceTree = "<group>"; };
+		76921AA01FE3AE480072572C /* UINavigationController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		76921AA11FE3AE480072572C /* UINavigationController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		76921AA21FE3AE480072572C /* UITabBarController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		76921AA31FE3AE480072572C /* UITabBarController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		76921AA41FE3AE480072572C /* UIView+CustomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomControlView.h"; sourceTree = "<group>"; };
+		76921AA51FE3AE480072572C /* UIView+CustomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomControlView.m"; sourceTree = "<group>"; };
+		76921AA61FE3AE480072572C /* UIViewController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		76921AA71FE3AE480072572C /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		76921AA81FE3AE480072572C /* UIWindow+CurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CurrentViewController.h"; sourceTree = "<group>"; };
+		76921AA91FE3AE480072572C /* UIWindow+CurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CurrentViewController.m"; sourceTree = "<group>"; };
+		76921AAA1FE3AE480072572C /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		76921AAB1FE3AE480072572C /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		76921AAC1FE3AE480072572C /* ZFBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBrightnessView.h; sourceTree = "<group>"; };
+		76921AAD1FE3AE480072572C /* ZFBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBrightnessView.m; sourceTree = "<group>"; };
+		76921AAE1FE3AE480072572C /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
+		76921AAF1FE3AE480072572C /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
+		76921AB01FE3AE480072572C /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
+		76921AB11FE3AE480072572C /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
+		76921AB21FE3AE480072572C /* ZFPlayerControlViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlViewDelegate.h; sourceTree = "<group>"; };
+		76921AB31FE3AE480072572C /* ZFPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerModel.h; sourceTree = "<group>"; };
+		76921AB41FE3AE480072572C /* ZFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerModel.m; sourceTree = "<group>"; };
+		76921AB51FE3AE480072572C /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
+		76921AB61FE3AE480072572C /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
 		76A720EF1FD7902400FF9F99 /* OutPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A720F21FD7902400FF9F99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76A720F31FD7902400FF9F99 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -114,6 +152,7 @@
 		76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SupportedMediaType.plist; sourceTree = "<group>"; };
 		76AC167A1FE11E14005D4C48 /* MediaThumbTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaThumbTool.h; sourceTree = "<group>"; };
 		76AC167B1FE11E14005D4C48 /* MediaThumbTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaThumbTool.m; sourceTree = "<group>"; };
+		AB6E45F8DA0C12402F9FE262 /* Pods_OutPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OutPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501BE017DE6749F88EE3C5BA /* libPods-OutPlayer.a in Frameworks */,
+				351CDD5EB28421ABEF8A3F4B /* Pods_OutPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,18 +184,50 @@
 			path = DataSafeCheck;
 			sourceTree = "<group>";
 		};
-		769648681FE27A2200B3F68F /* MRVLCPlayer */ = {
+		76921A961FE3AE480072572C /* ZFPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				7696486F1FE27A3B00B3F68F /* MRVideoConst.h */,
-				7696486D1FE27A3B00B3F68F /* MRVideoControlView.h */,
-				769648691FE27A3A00B3F68F /* MRVideoControlView.m */,
-				7696486A1FE27A3A00B3F68F /* MRVideoHUDView.h */,
-				7696486C1FE27A3B00B3F68F /* MRVideoHUDView.m */,
-				7696486B1FE27A3B00B3F68F /* MRVLCPlayer.h */,
-				7696486E1FE27A3B00B3F68F /* MRVLCPlayer.mm */,
+				76921AAE1FE3AE480072572C /* ZFPlayer.bundle */,
+				76921A9B1FE3AE480072572C /* Category */,
+				76921A971FE3AE480072572C /* ASValuePopUpView.h */,
+				76921A981FE3AE480072572C /* ASValuePopUpView.m */,
+				76921A991FE3AE480072572C /* ASValueTrackingSlider.h */,
+				76921A9A1FE3AE480072572C /* ASValueTrackingSlider.m */,
+				76921AAA1FE3AE480072572C /* MMMaterialDesignSpinner.h */,
+				76921AAB1FE3AE480072572C /* MMMaterialDesignSpinner.m */,
+				76921AAC1FE3AE480072572C /* ZFBrightnessView.h */,
+				76921AAD1FE3AE480072572C /* ZFBrightnessView.m */,
+				76921AAF1FE3AE480072572C /* ZFPlayer.h */,
+				76921AB01FE3AE480072572C /* ZFPlayerControlView.h */,
+				76921AB11FE3AE480072572C /* ZFPlayerControlView.m */,
+				76921AB21FE3AE480072572C /* ZFPlayerControlViewDelegate.h */,
+				76921AB31FE3AE480072572C /* ZFPlayerModel.h */,
+				76921AB41FE3AE480072572C /* ZFPlayerModel.m */,
+				76921AB51FE3AE480072572C /* ZFPlayerView.h */,
+				76921AB61FE3AE480072572C /* ZFPlayerView.m */,
 			);
-			path = MRVLCPlayer;
+			path = ZFPlayer;
+			sourceTree = "<group>";
+		};
+		76921A9B1FE3AE480072572C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				76921A9C1FE3AE480072572C /* UIAlertController+ZFPlayerRotation.h */,
+				76921A9D1FE3AE480072572C /* UIAlertController+ZFPlayerRotation.m */,
+				76921A9E1FE3AE480072572C /* UIImageView+ZFCache.h */,
+				76921A9F1FE3AE480072572C /* UIImageView+ZFCache.m */,
+				76921AA01FE3AE480072572C /* UINavigationController+ZFPlayerRotation.h */,
+				76921AA11FE3AE480072572C /* UINavigationController+ZFPlayerRotation.m */,
+				76921AA21FE3AE480072572C /* UITabBarController+ZFPlayerRotation.h */,
+				76921AA31FE3AE480072572C /* UITabBarController+ZFPlayerRotation.m */,
+				76921AA41FE3AE480072572C /* UIView+CustomControlView.h */,
+				76921AA51FE3AE480072572C /* UIView+CustomControlView.m */,
+				76921AA61FE3AE480072572C /* UIViewController+ZFPlayerRotation.h */,
+				76921AA71FE3AE480072572C /* UIViewController+ZFPlayerRotation.m */,
+				76921AA81FE3AE480072572C /* UIWindow+CurrentViewController.h */,
+				76921AA91FE3AE480072572C /* UIWindow+CurrentViewController.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		76A720E61FD7902400FF9F99 = {
@@ -270,7 +341,7 @@
 		76A721151FD7DEC700FF9F99 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				769648681FE27A2200B3F68F /* MRVLCPlayer */,
+				76921A961FE3AE480072572C /* ZFPlayer */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -279,7 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				76A721171FD7E07D00FF9F99 /* MediaPlayer.framework */,
-				5BFA75712110FD6A4FAFFE73 /* libPods-OutPlayer.a */,
+				AB6E45F8DA0C12402F9FE262 /* Pods_OutPlayer.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -364,6 +435,8 @@
 			children = (
 				76A7214E1FD80DDF00FF9F99 /* NativeVideosHomeController.h */,
 				76A7214F1FD80DDF00FF9F99 /* NativeVideosHomeController.m */,
+				762116D41FE3719C00B6751D /* NativeVideoPlayerController.h */,
+				762116D51FE3719C00B6751D /* NativeVideoPlayerController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -503,6 +576,7 @@
 				76A721521FD80F6000FF9F99 /* NativeVideos.storyboard in Resources */,
 				76AC16791FE101BD005D4C48 /* SupportedMediaType.plist in Resources */,
 				76A721541FD80F7600FF9F99 /* LeadVideos.storyboard in Resources */,
+				76921AC21FE3AE490072572C /* ZFPlayer.bundle in Resources */,
 				76A720FF1FD7902400FF9F99 /* LaunchScreen.storyboard in Resources */,
 				76A721231FD7F03F00FF9F99 /* InfoPlist.strings in Resources */,
 				76A720FC1FD7902400FF9F99 /* Assets.xcassets in Resources */,
@@ -519,9 +593,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -574,28 +661,40 @@
 			files = (
 				76A7213B1FD80BE700FF9F99 /* UIColor+Hex.m in Sources */,
 				766040991FD9123A0079BAEA /* NSArray+Safe.m in Sources */,
-				769648701FE27A3B00B3F68F /* MRVideoControlView.m in Sources */,
 				7660409C1FD9123A0079BAEA /* NSObject+SwizzleMethod.m in Sources */,
 				76A721471FD80D3A00FF9F99 /* BaseViewController.m in Sources */,
 				766040A21FD92AF40079BAEA /* NativeVideoListCell.m in Sources */,
-				769648711FE27A3B00B3F68F /* MRVideoHUDView.m in Sources */,
 				76A721381FD809C600FF9F99 /* NSString+WDUtils.m in Sources */,
+				76921AB91FE3AE490072572C /* UIAlertController+ZFPlayerRotation.m in Sources */,
 				76A7210F1FD7DD9600FF9F99 /* UIBarButtonItem+RD_extension.m in Sources */,
-				769648721FE27A3B00B3F68F /* MRVLCPlayer.mm in Sources */,
+				76921AC01FE3AE490072572C /* MMMaterialDesignSpinner.m in Sources */,
+				76921ABC1FE3AE490072572C /* UITabBarController+ZFPlayerRotation.m in Sources */,
+				76921ABA1FE3AE490072572C /* UIImageView+ZFCache.m in Sources */,
 				76A7214A1FD80D6100FF9F99 /* LeadVideosController.m in Sources */,
+				76921ABB1FE3AE490072572C /* UINavigationController+ZFPlayerRotation.m in Sources */,
+				76921AC41FE3AE490072572C /* ZFPlayerModel.m in Sources */,
 				76A7214D1FD80D7800FF9F99 /* SettingController.m in Sources */,
+				76921AC31FE3AE490072572C /* ZFPlayerControlView.m in Sources */,
 				766040891FD90BB00079BAEA /* NSNumber+DRM_extension.m in Sources */,
 				7660408F1FD90E4D0079BAEA /* NativeVideosServe.m in Sources */,
+				762116D61FE3719C00B6751D /* NativeVideoPlayerController.m in Sources */,
+				76921ABE1FE3AE490072572C /* UIViewController+ZFPlayerRotation.m in Sources */,
+				76921AC51FE3AE490072572C /* ZFPlayerView.m in Sources */,
 				766040861FD8F6C60079BAEA /* NativeVideoFile.m in Sources */,
 				76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */,
+				76921AB81FE3AE490072572C /* ASValueTrackingSlider.m in Sources */,
+				76921AC11FE3AE490072572C /* ZFBrightnessView.m in Sources */,
 				7660409F1FD915110079BAEA /* UIImage+DRMExtension.m in Sources */,
 				7660409A1FD9123A0079BAEA /* NSMutableArray+safe.m in Sources */,
 				7660409B1FD9123A0079BAEA /* NSMutableDictionary+safe.m in Sources */,
 				76AC167C1FE11E14005D4C48 /* MediaThumbTool.m in Sources */,
 				76A721501FD80DDF00FF9F99 /* NativeVideosHomeController.m in Sources */,
+				76921ABD1FE3AE490072572C /* UIView+CustomControlView.m in Sources */,
+				76921AB71FE3AE490072572C /* ASValuePopUpView.m in Sources */,
 				76A721341FD807CD00FF9F99 /* MainViewController.m in Sources */,
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
 				76A720F41FD7902400FF9F99 /* AppDelegate.mm in Sources */,
+				76921ABF1FE3AE490072572C /* UIWindow+CurrentViewController.m in Sources */,
 				76A721121FD7DDBC00FF9F99 /* BaseNavigationController.m in Sources */,
 				76A7211D1FD7EDCC00FF9F99 /* HttpRequestManager.m in Sources */,
 			);
@@ -746,6 +845,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BE96T6BL3K;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";
@@ -763,6 +863,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BE96T6BL3K;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OutPlayer/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OutPlayer/Config/Info.plist";
