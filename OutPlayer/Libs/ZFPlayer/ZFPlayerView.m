@@ -255,6 +255,8 @@ typedef NS_ENUM(NSInteger, PanDirection){
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_offset(UIEdgeInsetsZero);
         }];
+        [self.superview setNeedsLayout];
+        [self.superview layoutIfNeeded];
     }
 }
 
@@ -1306,8 +1308,10 @@ typedef NS_ENUM(NSInteger, PanDirection){
     } else {
         if (!self.isFullScreen) {
             // player加到控制器上，只有一个player时候
-            [self pause];
-            if ([self.delegate respondsToSelector:@selector(zf_playerBackAction)]) { [self.delegate zf_playerBackAction]; }
+            if ([self.delegate respondsToSelector:@selector(zf_playerBackAction)]) {
+                [self pause];
+                [self.delegate zf_playerBackAction];
+            }
         } else {
             [self interfaceOrientation:UIInterfaceOrientationPortrait];
         }
