@@ -34,7 +34,6 @@
     playerModel.videoURL = self.mediaUrl;
     playerModel.placeholderImage = self.videoThumb;
     playerModel.fatherView = self.fatherPlayerView;
-    playerModel.seekTime = 10 * 1000;
     
     [self.player playerModel:playerModel];
     [self.player autoPlayTheVideo];
