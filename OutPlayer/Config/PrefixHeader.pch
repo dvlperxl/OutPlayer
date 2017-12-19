@@ -28,6 +28,8 @@
 #import "BaseNavigationController.h"
 
 #import <YYModel/YYModel.h>
+#import <MJRefresh/MJRefresh.h>
+#import "CYLTableViewPlaceHolder.h"
 #import "UIButton+WebCache.h"
 #import "UIImageView+WebCache.h"
 #endif

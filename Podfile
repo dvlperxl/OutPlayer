@@ -11,4 +11,5 @@ target 'OutPlayer' do
     pod 'YYModel'
     pod 'MobileVLCKit'
     pod 'Masonry'
+    pod 'CYLTableViewPlaceHolder'
 end

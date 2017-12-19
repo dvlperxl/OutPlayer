@@ -12,9 +12,11 @@
 #import "NativeVideoListCell.h"
 #import "NativeVideoPlayerController.h"
 
-@interface NativeVideosHomeController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NativeVideosHomeController ()<UITableViewDelegate,UITableViewDataSource,CYLTableViewPlaceHolderDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
+@property (nonatomic,strong) UIView *emptyDataView;
 @property (nonatomic,strong) NSMutableArray *nativeVideos;
 @end
 
@@ -23,17 +25,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupUI];
+    
     [self loadData];
 }
-
+- (void)setupUI {
+    [self.tableView cyl_reloadData];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+}
 - (void)loadData {
     NativeVideosServe *serve = [[NativeVideosServe alloc]init];
     [serve nativeVideosCompletion:^(NSArray *videos) {
         self.nativeVideos = [NSArray yy_modelArrayWithClass:[NativeVideoFile class] json:videos].mutableCopy;
-        [self.tableView reloadData];
+        if ([self.tableView.mj_header isRefreshing]) {
+            [self.tableView.mj_header endRefreshing];
+        }
+        [self reloadUI];
     }];
 }
+- (void)reloadUI {
+    [self.tableView cyl_reloadData];
+    [self reloadCachesLabel];
+}
 
+- (void)reloadCachesLabel {
+    // 总空间
+    NSString *totalDiskSize = [RDSandboxTool diskOfAllSize].cachesFormat;
+    // 可用空间
+    NSString *freeDiskSize = [RDSandboxTool diskOfFreeSize].cachesFormat;
+    self.cacheLabel.text = [NSString stringWithFormat:@"总空间%@，可用空间%@",totalDiskSize,freeDiskSize];
+}
+#pragma mark - CYLTableViewPlaceHolderDelegate
+- (UIView *)makePlaceHolderView {
+    UIView *view = [UIView new];
+//    view.backgroundColor = [UIColor redColor];
+    return view;
+}
+- (BOOL)enableScrollWhenPlaceHolderViewShowing {
+    return YES;
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.nativeVideos.count;
@@ -55,6 +85,7 @@
         if ([serve removeVideoAtURL:video.videoUrl]) {  // 本地删除成功
             [self.nativeVideos removeObject:video];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [self reloadCachesLabel];
         }
     }];
     return @[action];
