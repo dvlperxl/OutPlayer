@@ -55,6 +55,7 @@
 		76A7215A1FD813E600FF9F99 /* RDSandboxTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A721581FD813E600FF9F99 /* RDSandboxTool.m */; };
 		76AC16791FE101BD005D4C48 /* SupportedMediaType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */; };
 		76AC167C1FE11E14005D4C48 /* MediaThumbTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 76AC167B1FE11E14005D4C48 /* MediaThumbTool.m */; };
+		76ED0D001FE90B4A00A65BE3 /* NativeVideosEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ED0CFF1FE90B4A00A65BE3 /* NativeVideosEmptyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +153,8 @@
 		76AC16781FE101BD005D4C48 /* SupportedMediaType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SupportedMediaType.plist; sourceTree = "<group>"; };
 		76AC167A1FE11E14005D4C48 /* MediaThumbTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaThumbTool.h; sourceTree = "<group>"; };
 		76AC167B1FE11E14005D4C48 /* MediaThumbTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaThumbTool.m; sourceTree = "<group>"; };
+		76ED0CFE1FE90B4A00A65BE3 /* NativeVideosEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeVideosEmptyView.h; sourceTree = "<group>"; };
+		76ED0CFF1FE90B4A00A65BE3 /* NativeVideosEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeVideosEmptyView.m; sourceTree = "<group>"; };
 		AB6E45F8DA0C12402F9FE262 /* Pods_OutPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OutPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C592566F9EA3501C5B07B3BA /* Pods-OutPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		F5209D7424E22BFE0752E798 /* Pods-OutPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OutPlayer/Pods-OutPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 			children = (
 				766040A01FD92AF40079BAEA /* NativeVideoListCell.h */,
 				766040A11FD92AF40079BAEA /* NativeVideoListCell.m */,
+				76ED0CFE1FE90B4A00A65BE3 /* NativeVideosEmptyView.h */,
+				76ED0CFF1FE90B4A00A65BE3 /* NativeVideosEmptyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 				76A721501FD80DDF00FF9F99 /* NativeVideosHomeController.m in Sources */,
 				76921ABD1FE3AE490072572C /* UIView+CustomControlView.m in Sources */,
 				76921AB71FE3AE490072572C /* ASValuePopUpView.m in Sources */,
+				76ED0D001FE90B4A00A65BE3 /* NativeVideosEmptyView.m in Sources */,
 				76A721341FD807CD00FF9F99 /* MainViewController.m in Sources */,
 				76A721021FD7902400FF9F99 /* main.m in Sources */,
 				76A720F41FD7902400FF9F99 /* AppDelegate.mm in Sources */,

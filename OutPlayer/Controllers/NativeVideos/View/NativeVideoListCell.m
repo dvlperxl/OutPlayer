@@ -20,11 +20,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.thumbImageView.image = [UIImage imageNamed:@"rd_error_long"];
 }
 
 - (void)bindingViewModel:(NativeVideoFile *)viewModel {
-    self.thumbImageView.image = viewModel.videoThumb;
+    if (viewModel.videoThumb) {
+        self.thumbImageView.image = viewModel.videoThumb;
+    }
     self.videoTitleLabel.text = viewModel.videoTitle;
     self.videoSizeLabel.text = viewModel.videoSize;
 }

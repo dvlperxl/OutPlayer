@@ -10,13 +10,13 @@
 #import "NativeVideosServe.h"
 #import "NativeVideoFile.h"
 #import "NativeVideoListCell.h"
+#import "NativeVideosEmptyView.h"
 #import "NativeVideoPlayerController.h"
 
-@interface NativeVideosHomeController ()<UITableViewDelegate,UITableViewDataSource,CYLTableViewPlaceHolderDelegate>
+@interface NativeVideosHomeController ()<UITableViewDelegate,UITableViewDataSource,CYLTableViewPlaceHolderDelegate,NativeVideosEmptyViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
-@property (nonatomic,strong) UIView *emptyDataView;
 @property (nonatomic,strong) NSMutableArray *nativeVideos;
 @end
 
@@ -27,7 +27,7 @@
     
     [self setupUI];
     
-    [self loadData];
+//    [self loadData];
 }
 - (void)setupUI {
     [self.tableView cyl_reloadData];
@@ -57,12 +57,14 @@
 }
 #pragma mark - CYLTableViewPlaceHolderDelegate
 - (UIView *)makePlaceHolderView {
-    UIView *view = [UIView new];
-//    view.backgroundColor = [UIColor redColor];
-    return view;
+    return self.emptyView;
 }
 - (BOOL)enableScrollWhenPlaceHolderViewShowing {
     return YES;
+}
+#pragma mark - NativeVideosEmptyViewDelegate
+- (void)emptyOverlayClicked:(id)sender {
+    
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -101,5 +103,11 @@
     playerVC.videoTitle = video.videoTitle;
     playerVC.videoThumb = video.videoThumb;
     [self.navigationController pushViewController:playerVC animated:YES];
+}
+#pragma mark - getter
+- (NativeVideosEmptyView *)emptyView {
+    NativeVideosEmptyView *emptyPlaceHolder = [[NativeVideosEmptyView alloc] initWithFrame:self.tableView.frame];
+    emptyPlaceHolder.delegate = self;
+    return emptyPlaceHolder;
 }
 @end
