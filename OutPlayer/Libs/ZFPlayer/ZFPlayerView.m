@@ -183,16 +183,21 @@ typedef NS_ENUM(NSInteger, PanDirection){
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangeListenerCallback:) name:AVAudioSessionRouteChangeNotification object:nil];
     
     // 监测设备方向
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onDeviceOrientationChange)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onStatusBarOrientationChange)
-                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
-                                               object:nil];
+    if (!self.onlySupportFullScreen) {
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onDeviceOrientationChange)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onStatusBarOrientationChange)
+                                                     name:UIApplicationDidChangeStatusBarOrientationNotification
+                                                   object:nil];
+    } else {   //  只支持全屏
+        self.isFullScreen = NO;
+        [self _fullScreenAction];
+    }
 }
 
 #pragma mark - layoutSubviews
@@ -691,7 +696,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
     [[UIApplication sharedApplication] setStatusBarOrientation:orientation animated:NO];
     // 获取旋转状态条需要的时间:
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDuration:self.onlySupportFullScreen ? 0.0 : 0.3];
     // 更改了状态条的方向,但是设备方向UIInterfaceOrientation还是正方向的,这就要设置给你播放视频的视图的方向设置旋转
     // 给你的播放视频的view视图设置旋转
     self.transform = CGAffineTransformIdentity;
@@ -741,6 +746,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
  */
 - (void)onDeviceOrientationChange {
     if (!self.player) { return; }
+    if (self.onlySupportFullScreen) { return; }
     if (ZFPlayerShared.isLockScreen) { return; }
     if (self.didEnterBackground) { return; };
     if (self.playerPushedOrPresented) { return; }
@@ -1215,6 +1221,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
     [controlView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
+    [controlView zf_onlySupportFullScreen:self.onlySupportFullScreen];
 }
 
 - (void)setPlayerModel:(ZFPlayerModel *)playerModel {
@@ -1268,6 +1275,12 @@ typedef NS_ENUM(NSInteger, PanDirection){
         [self play];
     }
 }
+- (void)setOnlySupportFullScreen:(BOOL)onlySupportFullScreen {
+    _onlySupportFullScreen = onlySupportFullScreen;
+    if (self.controlView) {
+        [self.controlView zf_onlySupportFullScreen:onlySupportFullScreen];
+    }
+}
 #pragma mark - Getter
 
 - (ZFBrightnessView *)brightnessView {
@@ -1303,6 +1316,14 @@ typedef NS_ENUM(NSInteger, PanDirection){
 }
 
 - (void)zf_controlView:(UIView *)controlView backAction:(UIButton *)sender {
+    if (self.onlySupportFullScreen) {
+        if ([self.delegate respondsToSelector:@selector(zf_playerBackAction)]) {
+            [self interfaceOrientation:UIInterfaceOrientationPortrait];
+            [self pause];
+            [self.delegate zf_playerBackAction];
+        }
+        return;
+    }
     if (ZFPlayerShared.isLockScreen) {
         [self unLockTheScreen];
     } else {

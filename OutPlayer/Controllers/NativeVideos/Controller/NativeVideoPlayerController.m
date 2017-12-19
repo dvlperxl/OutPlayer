@@ -41,12 +41,13 @@
 }
 #pragma mark - ZFPlayerDelegate
 - (void)zf_playerBackAction {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 #pragma mark - getter
 - (ZFPlayerView *)player {
     if (!_player) {
         _player = [[ZFPlayerView alloc] init];
+        _player.onlySupportFullScreen = YES;
         _player.delegate = self;
     }
     return _player;

@@ -150,4 +150,6 @@
  */
 - (void)zf_playerCellPlay;
 
+/** 仅支持全屏*/
+- (void)zf_onlySupportFullScreen:(BOOL)onlySupportFull;
 @end

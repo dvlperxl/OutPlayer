@@ -102,7 +102,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 @property (nonatomic, assign, getter=isPlayEnd) BOOL  playeEnd;
 /** 是否全屏播放 */
 @property (nonatomic, assign,getter=isFullScreen)BOOL fullScreen;
-
+/** 是否只支持全屏 */
+@property (nonatomic, assign,getter=isOnlyFullScreen)BOOL onlyFullScreen;
 @end
 
 @implementation ZFPlayerControlView
@@ -483,8 +484,9 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  *  屏幕方向发生变化会调用这里
  */
 - (void)onDeviceOrientationChange {
+    if (self.onlyFullScreen) { return; }
     if (ZFPlayerShared.isLockScreen) { return; }
-    self.lockBtn.hidden         = !self.isFullScreen;
+    self.lockBtn.hidden         = self.onlyFullScreen ? YES : !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown || orientation == UIDeviceOrientationPortraitUpsideDown) { return; }
@@ -499,7 +501,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         self.shrink             = NO;
     }
     self.fullScreen             = YES;
-    self.lockBtn.hidden         = !self.isFullScreen;
+    self.lockBtn.hidden         = self.onlyFullScreen ? YES : !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn setImage:ZFPlayerImage(@"ZFPlayer_back_full") forState:UIControlStateNormal];
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -513,7 +515,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  */
 - (void)setOrientationPortraitConstraint {
     self.fullScreen             = NO;
-    self.lockBtn.hidden         = !self.isFullScreen;
+    self.lockBtn.hidden         = self.onlyFullScreen ? YES : !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(3);
@@ -565,11 +567,13 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  *  监听设备旋转通知
  */
 - (void)listeningRotating {
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onDeviceOrientationChange)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
+    if (!self.onlyFullScreen) {
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onDeviceOrientationChange)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
+    }
 }
 
 
@@ -887,7 +891,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     self.shrink                      = NO;
     self.showing                     = NO;
     self.playeEnd                    = NO;
-    self.lockBtn.hidden              = !self.isFullScreen;
+    self.lockBtn.hidden              = self.onlyFullScreen ? YES : !self.isFullScreen;
     self.failBtn.hidden              = YES;
     self.placeholderImageView.alpha  = 1;
     [self hideControlView];
@@ -986,6 +990,21 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.backBtn setImage:ZFPlayerImage(@"ZFPlayer_close") forState:UIControlStateNormal];
 }
 
+/** 仅支持全屏*/
+- (void)zf_onlySupportFullScreen:(BOOL)onlySupportFull {
+    self.onlyFullScreen = onlySupportFull;
+    self.fullScreenBtn.hidden = onlySupportFull;
+    
+    if (onlySupportFull) {
+        [self.currentTimeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self.startBtn.mas_trailing).offset(30);
+        }];
+    } else {
+        [self.currentTimeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self.startBtn.mas_trailing).offset(-3);
+        }];
+    }
+}
 - (void)zf_playerCurrentTime:(NSInteger)currentTime totalTime:(NSInteger)totalTime sliderValue:(CGFloat)value {
     // 当前时长进度progress
     NSInteger proMin = currentTime / 60;//当前秒
