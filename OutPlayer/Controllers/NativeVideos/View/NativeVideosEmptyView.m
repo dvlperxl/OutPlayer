@@ -15,6 +15,7 @@ static float const kUIemptyOverlayLabelHeight    = 20;
 @interface NativeVideosEmptyView ()
 
 @property (nonatomic, strong) UIImageView *emptyOverlayImageView;
+@property (nonatomic, strong) UILabel *emptyOverlayLabel;
 @end
 
 
@@ -42,12 +43,12 @@ static float const kUIemptyOverlayLabelHeight    = 20;
     self.contentMode =   UIViewContentModeTop;
     [self addUIemptyOverlayImageView];
     [self addUIemptyOverlayLabel];
-    [self setupUIemptyOverlay];
+    [self addUIemptyOverlayButton];
     return self;
 }
 
 - (void)addUIemptyOverlayImageView {
-    self.emptyOverlayImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    self.emptyOverlayImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.emptyOverlayImageView.center = CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2 - 100);
     self.emptyOverlayImageView.image = [UIImage imageNamed:@"WebView_LoadFail_Refresh_Icon"];
     [self addSubview:self.emptyOverlayImageView];
@@ -59,8 +60,8 @@ static float const kUIemptyOverlayLabelHeight    = 20;
     emptyOverlayLabel.textAlignment = NSTextAlignmentCenter;
     emptyOverlayLabel.numberOfLines = 0;
     emptyOverlayLabel.backgroundColor = [UIColor clearColor];
-    emptyOverlayLabel.text = @"暂无数据,轻触屏幕重新加载";
-    emptyOverlayLabel.font = [UIFont boldSystemFontOfSize:15];
+    emptyOverlayLabel.text = @"您还没有导入任何视频哦";
+    emptyOverlayLabel.font = [UIFont systemFontOfSize:16];
     emptyOverlayLabel.frame = ({
         CGRect frame = emptyOverlayLabel.frame;
         frame.origin.y = CGRectGetMaxY(self.emptyOverlayImageView.frame) + 10;
@@ -68,25 +69,23 @@ static float const kUIemptyOverlayLabelHeight    = 20;
     });
     emptyOverlayLabel.textColor = [UIColor grayColor];
     [self addSubview:emptyOverlayLabel];
+    self.emptyOverlayLabel = emptyOverlayLabel;
+}
+- (void)addUIemptyOverlayButton {
+    UIButton *emptyOverlayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    emptyOverlayButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [emptyOverlayButton setTitle:@"如何导入" forState:UIControlStateNormal];
+    [emptyOverlayButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [emptyOverlayButton addTarget:self action:@selector(emptyOverlayClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [emptyOverlayButton sizeToFit];
+    emptyOverlayButton.frame = CGRectMake(0, 0, emptyOverlayButton.bounds.size.width, emptyOverlayButton.bounds.size.height);
+    emptyOverlayButton.center = CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetMaxY(self.emptyOverlayLabel.frame) + 20);
+    [self addSubview:emptyOverlayButton];
 }
 
-- (void)setupUIemptyOverlay {
-    self.userInteractionEnabled = YES;
-    UILongPressGestureRecognizer *longPressUIemptyOverlay = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressUIemptyOverlay:)];
-    [longPressUIemptyOverlay setMinimumPressDuration:0.001];
-    [self addGestureRecognizer:longPressUIemptyOverlay];
-    self.userInteractionEnabled = YES;
-}
-
-- (void)longPressUIemptyOverlay:(UILongPressGestureRecognizer *)gesture {
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        self.emptyOverlayImageView.alpha = 0.4;
-    }
-    if ( gesture.state == UIGestureRecognizerStateEnded ) {
-        self.emptyOverlayImageView.alpha = 1;
-        if ([self.delegate respondsToSelector:@selector(emptyOverlayClicked:)]) {
-            [self.delegate emptyOverlayClicked:nil];
-        }
+- (void)emptyOverlayClicked:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(emptyOverlayClicked:)]) {
+        [self.delegate emptyOverlayClicked:sender];
     }
 }
 

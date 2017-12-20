@@ -27,7 +27,7 @@
     
     [self setupUI];
     
-//    [self loadData];
+    [self loadData];
 }
 - (void)setupUI {
     [self.tableView cyl_reloadData];

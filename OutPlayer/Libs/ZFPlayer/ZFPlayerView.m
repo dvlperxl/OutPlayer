@@ -119,8 +119,8 @@ typedef NS_ENUM(NSInteger, PanDirection){
 #pragma mark - life Cycle
 
 - (void)didAddSubview:(UIView *)subview {
-    if (![subview isKindOfClass:[self.controlView class]]) {
-        [self bringSubviewToFront:self.controlView];
+    if ([subview isKindOfClass:NSClassFromString(@"VLCOpenGLES2VideoView")]) {
+        [self sendSubviewToBack:subview];
     }
 }
 /**
@@ -197,6 +197,12 @@ typedef NS_ENUM(NSInteger, PanDirection){
     } else {   //  只支持全屏
         self.isFullScreen = NO;
         [self _fullScreenAction];
+        [self.brightnessView removeFromSuperview];
+        [self addSubview:self.brightnessView];
+        [self.brightnessView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(self);
+            make.width.height.mas_equalTo(155);
+        }];
     }
 }
 
